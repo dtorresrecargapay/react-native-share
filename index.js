@@ -144,7 +144,7 @@ const requireAndAskPermissions = async (options: Options | MultipleOptions): Pro
 
 class RNShare {
   static Button: any;
-  static ShareSheet: React.createElement;
+  static ShareSheet: React.Element<*>,
   static Overlay: any;
   static Sheet: any;
   static Social = {
@@ -248,7 +248,7 @@ class RNShare {
     }
   }
 
-  static isPackageInstalled (packageName): Promise<ShareSingleReturn> {
+  static isPackageInstalled (packageName: string): Promise<ShareSingleReturn> {
     if (Platform.OS === 'android') {
       return new Promise((resolve, reject) => {
         NativeModules.RNShare.isPackageInstalled(

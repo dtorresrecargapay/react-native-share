@@ -57,7 +57,7 @@ export default class App extends Component<Props> {
         <Button
           title="Check package installed"
           onPress={() =>
-            this.isPackageInstalled().then(({ isInstalled }) => Alert.alert(`isInstalled = ${isInstalled}`))
+            this.isPackageInstalled().then(({ isInstalled }: { isInstalled: boolean }) => Alert.alert(`isInstalled = ${isInstalled}`))
           }
         />
       </View>
