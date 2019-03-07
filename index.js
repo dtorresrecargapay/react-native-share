@@ -95,7 +95,7 @@ type MultipleOptions = {
 };
 
 type OpenReturn = { app?: string, dismissedAction?: boolean };
-type ShareSingleReturn = { message: string, isInstalled?: boolean };
+type ShareSingleReturn = { message?: string, isInstalled?: boolean };
 
 const requireAndAskPermissions = async (options: Options | MultipleOptions): Promise<any> => {
   if ((options.url || options.urls) && Platform.OS === 'android') {
@@ -144,7 +144,7 @@ const requireAndAskPermissions = async (options: Options | MultipleOptions): Pro
 
 class RNShare {
   static Button: any;
-  static ShareSheet: React.Element<*>;
+  static ShareSheet: any;
   static Overlay: any;
   static Sheet: any;
   static Social = {
@@ -248,7 +248,7 @@ class RNShare {
     }
   }
 
-  static isPackageInstalled (packageName: string): Promise<ShareSingleReturn> {
+  static isPackageInstalled (packageName: string): Promise<?ShareSingleReturn> {
     if (Platform.OS === 'android') {
       return new Promise((resolve, reject) => {
         NativeModules.RNShare.isPackageInstalled(
