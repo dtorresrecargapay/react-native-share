@@ -269,7 +269,7 @@ class RNShare {
   }
 }
 
-module.exports = RNShare;
+export default RNShare;
 module.exports.Overlay = Overlay;
 module.exports.Sheet = Sheet;
 module.exports.Button = Button;
